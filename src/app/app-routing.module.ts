@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomLayoutComponent } from './custom-layout/custom-layout.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { MedicoComponent } from './pages/medico/medico.component';
+import { ModalClienteComponent } from './modal/modal-cliente/modal-cliente.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
       { path: 'cliente', component: ClienteComponent},
       { path: 'medico', component: MedicoComponent}
     ]
-  }
+  },
 ];
 
 @NgModule({
