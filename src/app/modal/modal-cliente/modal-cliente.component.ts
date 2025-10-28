@@ -14,13 +14,18 @@ export class ModalClienteComponent implements OnInit {
 
   constructor(private cd: ChangeDetectorRef,private fb: FormBuilder) {
     this.form = this.fb.group({
-      cliente: [''],
-      servico: [''],
-      tempoEstimado: [''],
-      valorServico: [''],
-      responsavel: [''],
-      dtAtendimento: [''],
-      status: [''],
+      nomeCompleto: [''],
+      cpf: [''],
+      dtNascimento: [''],
+      genero: [''],
+      telefone: [''],
+      cep: [''],
+      logradouro: [''],
+      numero: [''],
+      bairro: [''],
+      complemento: [''],
+      cidade: [''],
+      estado: [''],
     });
    }
 

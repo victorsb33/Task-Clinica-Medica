@@ -16,6 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent, ClienteComponent, MedicoComponent, ModalClienteComponent],
@@ -30,6 +31,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatDatepickerModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatInputModule,
 
     // Vex
     VexModule,

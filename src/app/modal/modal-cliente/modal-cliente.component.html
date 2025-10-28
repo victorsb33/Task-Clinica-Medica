@@ -1,75 +1,97 @@
 <div>
-  <div
-    class="px-6 py-4 border-b"
-    id="title"
-    fxLayout="row"
-    fxLayoutAlign="start center"
-  >
-    <h2 class="title m-0">Cadrastro Cliente</h2>
-  </div>
-
-  <mat-dialog-content>
-    <div @fadeInUp fxFlex="auto" [formGroup]="form">
-      <div class="px-6 py-4" fxLayout="column">
-        <mat-form-field>
-          <mat-label>Nome</mat-label>
-          <input matInput required formControlName="cliente" placeholder='Nome completo'/>
-        </mat-form-field>
-
-        <div class="py-4" fxLayout="column">
-          <mat-form-field>
-            <mat-label>Serviço</mat-label>
-            <input matInput required formControlName="servico" placeholder='Ex.:corte'/>
-          </mat-form-field>
-        </div>
-
-        <div fxLayout="row"fxLayout.lt-sm="row"fxLayoutGap="8px"fxLayoutGap.lt-sm="0">
-          <mat-form-field fxFlex="auto">
-            <mat-label>Tempo Estimado</mat-label>
-            <input matInput required formControlName="tempoEstimado" placeholder='Tempo de duração em minutos'/>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="auto">
-            <mat-label>Valor do Serviço</mat-label>
-            <input matInput required formControlName="valorServico" placeholder='R$ Valor do Serviço'/>
-          </mat-form-field>
-        </div>
-
-        <div class="py-4" fxLayout="column">
-          <mat-form-field>
-            <mat-label>Responsável</mat-label>
-            <input matInput required formControlName="responsavel" placeholder='Nome do Profissional' />
-          </mat-form-field>
-        </div>
-
-        <div
-          fxLayout="row"
-          fxLayout.lt-sm="column"
-          fxLayoutGap="16px"
-          fxLayoutGap.lt-sm="0"
-        >
-          <mat-form-field fxFlex="auto">
-            <mat-label>Data Atendimento</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="dtAtendimento"/>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-
-          <mat-form-field fxFlex="auto">
-            <mat-label>Status</mat-label>
-              <mat-select formControlName="status">
-                <mat-option>Aceito</mat-option>
-                <mat-option>Pendente</mat-option>
-                <mat-option>Recusado</mat-option>
-              </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
+    <div class="px-6 py-4 border-b" id="title" fxLayout="row" fxLayoutAlign="start center">
+        <h2 class="title m-0">Cadrastro Cliente</h2>
     </div>
-  </mat-dialog-content>
 
-  <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancelar</button>
-    <button mat-button mat-raised-button color="primary">Salvar</button>
-  </mat-dialog-actions>
+    <mat-dialog-content>
+        <div @fadeInUp fxFlex="auto" [formGroup]="form">
+            <div class="px-6 py-4" fxLayout="column">
+                <mat-form-field>
+                    <mat-label>Nome</mat-label>
+                    <input matInput required formControlName="nomeCompleto"
+                        placeholder="Nome Completo" />
+                </mat-form-field>
+
+                <div class="py-4" fxLayout="column">
+                    <mat-form-field>
+                        <mat-label>CPF</mat-label>
+                        <input matInput required formControlName="cpf" placeholder="123.456.789-10" />
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Data de Nascimento</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dtNascimento" />
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Gênero</mat-label>
+                        <mat-select required formControlName="genero">
+                            <mat-option>Masculino</mat-option>
+                            <mat-option>Feminino</mat-option>
+                            <mat-option>Outro</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="py-4" fxLayout="column">
+                    <mat-form-field>
+                        <mat-label>Telefone</mat-label>
+                        <input matInput required formControlName="telefone" placeholder="(xx) xxxxx-xxxx" />
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="column" class="py-2">
+                    <mat-form-field>
+                        <mat-label>CEP</mat-label>
+                        <input matInput required formControlName="cep" placeholder="00000-000" />
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+                    <mat-form-field fxFlex="70">
+                        <mat-label>Logradouro</mat-label>
+                        <input matInput required formControlName="logradouro" placeholder="Rua, Avenida, etc." />
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30">
+                        <mat-label>Número</mat-label>
+                        <input matInput required formControlName="numero" placeholder="123" />
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column" class="py-2">
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Bairro</mat-label>
+                        <input matInput required formControlName="bairro" placeholder="Nome do bairro" />
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                        <mat-label>Complemento</mat-label>
+                        <input matInput formControlName="complemento" placeholder="Apartamento, bloco, etc." />
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-sm="column">
+                    <mat-form-field fxFlex="70">
+                        <mat-label>Cidade</mat-label>
+                        <input matInput required formControlName="cidade" placeholder="Cidade" />
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="30">
+                        <mat-label>Estado</mat-label>
+                        <input matInput required formControlName="estado" placeholder="UF" maxlength="2" />
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-button mat-raised-button color="primary">Salvar</button>
+    </mat-dialog-actions>
 </div>
