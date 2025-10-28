@@ -14,6 +14,7 @@ const routes: Routes = [
       { path: 'medico', component: MedicoComponent}
     ]
   },
+     { path: 'modal', component: ModalClienteComponent}
 ];
 
 @NgModule({
