@@ -16,7 +16,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { PageLayoutModule } from '../@vex/components/page-layout/page-layout.module';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [AppComponent, ClienteComponent, MedicoComponent, ModalClienteComponent],
@@ -32,6 +38,12 @@ import {MatInputModule} from '@angular/material/input';
     ReactiveFormsModule,
     MatButtonModule,
     MatInputModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    PageLayoutModule,
+    MatIconModule,
+    
 
     // Vex
     VexModule,
