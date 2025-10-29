@@ -47,7 +47,7 @@
                 <div fxLayout="column" class="py-2">
                     <mat-form-field>
                         <mat-label>CEP</mat-label>
-                        <input matInput required formControlName="cep" placeholder="00000-000" />
+                        <input matInput required formControlName="cep" placeholder="00000-000" (blur)="buscarCep()"/>
                     </mat-form-field>
                 </div>
 
