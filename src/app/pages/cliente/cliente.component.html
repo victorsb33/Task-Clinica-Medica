@@ -13,7 +13,7 @@
         </mat-form-field>
     </div>
     <div class="col">
-        <button mat-button fxFlex="grow" class="botao-estilo">
+        <button mat-button fxFlex="grow" (click)="limparFiltro()" class="botao-estilo">
             Limpar <mat-icon>backspace</mat-icon>
         </button>
     </div>
@@ -31,37 +31,37 @@
 
         <ng-container matColumnDef="nomeCliente">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Cliente </th>
-            <td mat-cell *matCellDef="let reserva"> {{reserva.nomeCliente}} </td>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.nomeCliente}} </td>
         </ng-container>
 
         <ng-container matColumnDef="dtNascimento">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Data de nascimento </th>
-            <td mat-cell *matCellDef="let reserva"> {{reserva.dtNascimento | date:'dd/MM/yyyy' }} </td>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.dtNascimento | date:'dd/MM/yyyy' }} </td>
         </ng-container>
 
         <ng-container matColumnDef="cpf">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Cpf </th>
-            <td mat-cell *matCellDef="let reserva"> {{reserva.cpf}} </td>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.cpf}} </td>
         </ng-container>
 
         <ng-container matColumnDef="genero">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Gênero </th>
-            <td mat-cell *matCellDef="let reserva"> {{reserva.genero}} </td>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.genero}} </td>
         </ng-container>
 
         <ng-container matColumnDef="cep">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Cep</th>
-            <td mat-cell *matCellDef="let reserva"> {{reserva.cep}} </td>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.cep}} </td>
         </ng-container>
 
         <!-- Actions Column -->
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
-            <td mat-cell *matCellDef="let row" class="icones-acoes">
-                <button mat-icon-button>
+            <td mat-cell *matCellDef="let cliente" class="icones-acoes">
+                <button (click)="editar(cliente)" mat-icon-button>
                     <mat-icon color="primary">edit</mat-icon>
                 </button>
-                <button mat-icon-button>
+                <button  (click)="delete(cliente)" mat-icon-button>
                     <mat-icon color="warn">delete</mat-icon>
                 </button>
             </td>

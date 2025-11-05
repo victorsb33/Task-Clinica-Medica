@@ -1,5 +1,5 @@
 table {
-  width: 100%;
+  width: 500%;
 }
 
 .mat-form-field {
@@ -20,9 +20,6 @@ td, th {
     color: white;
 }
 
-.botao-adicionar {
-    color: white;
-}
 
 .row {
   display: flex;
@@ -35,19 +32,3 @@ td, th {
   align-items: center;
 }
 
-.grade-icon {
-    font-size: 40px;
-    display: inline;
-    align-items: center;
-}
-
-button[mat-button] mat-icon,
-button[mat-raised-button] mat-icon {
-  vertical-align: middle;
-}
-
-.icones-acoes mat-icon-button {
-  display: inline;
-  font-size: 30px;
-  margin-right: 15px;
-}

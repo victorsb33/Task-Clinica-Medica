@@ -20,7 +20,7 @@ export class ClienteComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
+  erro: string | null = null;
   form: FormGroup;
 
   constructor(private dialog: MatDialog, private fb: FormBuilder) {
@@ -46,10 +46,11 @@ export class ClienteComponent implements OnInit, AfterViewInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-     console.log(result);
+      console.log(result);
       if (result) {
-         this.clientes.push(result)
+        this.clientes.push(result)
         this.dataSource = new MatTableDataSource(this.clientes);
+        this.limparFiltro();
       }
     });
   }
@@ -66,6 +67,37 @@ export class ClienteComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  delete(cliente: Cliente) {
+    let indiceRemover = this.clientes.indexOf(cliente);
+    if (indiceRemover > -1) {
+      this.clientes.splice(indiceRemover, 1);
+      console.log("Delete depois do splice", this.clientes)
+      this.dataSource = new MatTableDataSource(this.clientes)
+    }
+  }
+
+  limparFiltro() {
+    this.form.get('filtro')?.setValue('');
+    this.dataSource.filter = '';
+  }
+
+  editar(cliente: Cliente): void {
+    const dialogRef = this.dialog.open(ModalClienteComponent, {
+      width: '600px',
+      data: cliente // envia o cliente para o modal
+    });
+
+    dialogRef.afterClosed().subscribe((clienteEditado: Cliente) => {
+      if (clienteEditado) {
+        const index = this.clientes.indexOf(cliente);
+        if (index > -1) {
+          this.clientes[index] = clienteEditado; // substitui no array
+          this.dataSource.data = [...this.clientes]; // atualiza tabela
+        }
+      }
+    });
   }
 
 }

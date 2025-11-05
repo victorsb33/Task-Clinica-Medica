@@ -22,6 +22,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { PageLayoutModule } from '../@vex/components/page-layout/page-layout.module';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     PageLayoutModule,
     MatIconModule,
+    NgxMaskModule.forRoot(),
     
 
     // Vex

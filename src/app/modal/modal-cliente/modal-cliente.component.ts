@@ -17,7 +17,7 @@ export class ModalClienteComponent implements OnInit {
 
   constructor(private cd: ChangeDetectorRef, private fb: FormBuilder, private viaCepService: ViaCepService, private dialogRef: MatDialogRef<ModalClienteComponent>) {
     this.form = this.fb.group({
-      nomeCompleto: ['', Validators.required],
+      nomeCliente: ['', Validators.required],
       cpf: ['', Validators.required],
       dtNascimento: ['', Validators.required],
       genero: ['', Validators.required],

@@ -6,42 +6,12 @@
             <mat-label class="label">Pesquisar reserva</mat-label>
             <input matInput (keyup)="applyFilter($event)" formControlName="filtro" #input />
         </mat-form-field>
-    </div>
-    <div class="col">
-        <mat-form-field appearance="standard" fxFlex="grow">
-            <mat-label class="label">Area</mat-label>
-            <mat-select formControlName="categoria">
-                <mat-option value="todas">todas</mat-option>
-                <mat-option value="pediatrico">Pediatrico</mat-option>
-                <mat-option value="urologista">Urologista</mat-option>
-                <mat-option value="clinico geral">Clinico Geral</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
-    <div class="col">
-        <mat-form-field appearance="standard" fxFlex="grow">
-            <mat-label>Status</mat-label>
-            <mat-select formControlName="status">
-                <mat-option value="todos">Todos</mat-option>
-                <mat-option value="plano">Plano</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
-    <div class="col">
-        <button mat-button fxFlex="grow" class="botao-estilo">
-            Limpar <mat-icon>backspace</mat-icon>
-        </button>
-    </div>
-    <div class="col">
-        <button mat-button mat-raised-button color="primary" fxFlex="grow" class="botao-adicionar">
-            Adicionar <mat-icon>add</mat-icon>
-        </button>
-    </div>
-    <div class="col">
+    
+    <!-- <div class="col">
         <button mat-button fxFlex="grow">
             <mat-icon class="grade-icon">view_module</mat-icon>
         </button>
-    </div>
+    </div> -->
 </div>
 
 <div class="mat-elevation-z8">
