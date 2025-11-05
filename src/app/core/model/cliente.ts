@@ -1,9 +1,9 @@
 export class Reserva {
     id!: number;
     nomeCliente!: string;
-    dtAbertura!: Date;
-    codVendedor!: String;
-    dtFinalizacao!: Date;
-    valorTotalReserva!: number;
+    dtNascimento!: Date;
+    cpf!: String;
+    genero!: String;
+    cep!: String;
    
 }

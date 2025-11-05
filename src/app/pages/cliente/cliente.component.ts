@@ -14,7 +14,7 @@ import { Reserva } from '../../core/model/cliente';
 })
 export class ClienteComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ['nomeCliente', 'dtAbertura', 'codVendedor', 'dtFinalizacao', 'valorTotalReserva', 'actions'];
+  displayedColumns: string[] = ['nomeCliente', 'dtNascimento', 'cpf', 'genero', 'cep', 'actions'];
   dataSource!: MatTableDataSource<Reserva>;
   reservas: Reserva[] = [];
 
@@ -34,10 +34,10 @@ export class ClienteComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.reservas = [
-      { id: 1, nomeCliente: 'João Silva', dtAbertura: new Date('2023-10-01'), codVendedor: 'V123', dtFinalizacao: new Date('2023-10-05'), valorTotalReserva: 150.00 },
-      { id: 2, nomeCliente: 'Maria Oliveira', dtAbertura: new Date('2023-10-02'), codVendedor: 'V124', dtFinalizacao: new Date('2023-10-06'), valorTotalReserva: 200.00 },
-      { id: 3, nomeCliente: 'Carlos Souza', dtAbertura: new Date('2023-10-03'), codVendedor: 'V125', dtFinalizacao: new Date('2023-10-07'), valorTotalReserva: 250.00 },
-      { id: 4, nomeCliente: 'Ana Pereira', dtAbertura: new Date('2023-10-04'), codVendedor: 'V126', dtFinalizacao: new Date('2023-10-08'), valorTotalReserva: 300.00 },
+      { id: 1, nomeCliente: 'João Silva', dtNascimento: new Date('2023-10-01'), cpf: '000.000.000-00', genero: ('Masculino'), cep: '00000.00' },
+      { id: 2, nomeCliente: 'Maria Oliveira', dtNascimento: new Date('2023-10-02'), cpf: '000.000.000-00', genero: ('Feminino'), cep: '00000.00' },
+      { id: 3, nomeCliente: 'Carlos Souza', dtNascimento: new Date('2023-10-03'), cpf: '000.000.000-00', genero: ('Masculino'), cep: '00000.00' },
+      { id: 4, nomeCliente: 'Ana Pereira', dtNascimento: new Date('2023-10-04'), cpf: '000.000.000-00', genero: ('Feminino'), cep: '00000.00' },
     ];
     this.dataSource = new MatTableDataSource(this.reservas);
   }

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { stagger60ms } from '../../../@vex/animations/stagger.animation';
 import { fadeInUp400ms } from '../../../@vex/animations/fade-in-up.animation';
 import { ViaCepService } from '../../../../src/app/core/services/service/via-cep.service';
@@ -14,25 +14,25 @@ export class ModalClienteComponent implements OnInit {
   form: FormGroup;
   erro: string | null = null;
 
-  constructor(private cd: ChangeDetectorRef,private fb: FormBuilder,  private viaCepService: ViaCepService) {
+  constructor(private cd: ChangeDetectorRef, private fb: FormBuilder, private viaCepService: ViaCepService) {
     this.form = this.fb.group({
-      nomeCompleto: [''],
-      cpf: [''],
-      dtNascimento: [''],
-      genero: [''],
-      telefone: [''],
-      cep: [''],
-      logradouro: [''],
+      nomeCompleto: ['', Validators.required],
+      cpf: ['', Validators.required],
+      dtNascimento: ['', Validators.required],
+      genero: ['', Validators.required],
+      telefone: ['', Validators.required],
+      cep: ['', Validators.required],
+      logradouro: ['', Validators.required],
       numero: [''],
-      bairro: [''],
+      bairro: ['', Validators.required],
       complemento: [''],
-      cidade: [''],
-      estado: [''],
+      cidade: ['', Validators.required],
+      estado: ['', Validators.required],
     });
-    
-   }
 
-    buscarCep() {
+  }
+
+  buscarCep() {
     const cep = this.form.get('cep')?.value;
     if (!cep) return;
 
