@@ -92,6 +92,6 @@
 
     <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Cancelar</button>
-        <button mat-button mat-raised-button color="primary">Salvar</button>
+        <button mat-button mat-raised-button color="primary" [disabled]="form.invalid" (click)="cadastrar()">Salvar</button>
     </mat-dialog-actions>
 </div>

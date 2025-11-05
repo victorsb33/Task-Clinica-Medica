@@ -1,4 +1,4 @@
-export class Reserva {
+export class Cliente {
     id!: number;
     nomeCliente!: string;
     dtNascimento!: Date;

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { stagger60ms } from '../../../@vex/animations/stagger.animation';
 import { fadeInUp400ms } from '../../../@vex/animations/fade-in-up.animation';
 import { ViaCepService } from '../../../../src/app/core/services/service/via-cep.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'vex-modal-cliente',
@@ -14,7 +15,7 @@ export class ModalClienteComponent implements OnInit {
   form: FormGroup;
   erro: string | null = null;
 
-  constructor(private cd: ChangeDetectorRef, private fb: FormBuilder, private viaCepService: ViaCepService) {
+  constructor(private cd: ChangeDetectorRef, private fb: FormBuilder, private viaCepService: ViaCepService, private dialogRef: MatDialogRef<ModalClienteComponent>) {
     this.form = this.fb.group({
       nomeCompleto: ['', Validators.required],
       cpf: ['', Validators.required],
@@ -60,6 +61,10 @@ export class ModalClienteComponent implements OnInit {
         this.erro = 'Erro ao consultar o CEP.';
       }
     });
+  }
+
+  cadastrar(){
+    this.dialogRef.close( this.form?.value)
   }
 
   ngOnInit(): void {

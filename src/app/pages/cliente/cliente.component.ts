@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Reserva } from '../../core/model/cliente';
+import { Cliente } from '../../core/model/cliente';
 
 @Component({
   selector: 'vex-cliente',
@@ -15,8 +15,8 @@ import { Reserva } from '../../core/model/cliente';
 export class ClienteComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['nomeCliente', 'dtNascimento', 'cpf', 'genero', 'cep', 'actions'];
-  dataSource!: MatTableDataSource<Reserva>;
-  reservas: Reserva[] = [];
+  dataSource!: MatTableDataSource<Cliente>;
+  clientes: Cliente[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -26,20 +26,18 @@ export class ClienteComponent implements OnInit, AfterViewInit {
   constructor(private dialog: MatDialog, private fb: FormBuilder) {
     this.form = this.fb.group({
       filtro: [''],
-      categoria: [''],
-      status: ['']
     });
   }
 
 
   ngOnInit(): void {
-    this.reservas = [
+    this.clientes = [
       { id: 1, nomeCliente: 'João Silva', dtNascimento: new Date('2023-10-01'), cpf: '000.000.000-00', genero: ('Masculino'), cep: '00000.00' },
       { id: 2, nomeCliente: 'Maria Oliveira', dtNascimento: new Date('2023-10-02'), cpf: '000.000.000-00', genero: ('Feminino'), cep: '00000.00' },
       { id: 3, nomeCliente: 'Carlos Souza', dtNascimento: new Date('2023-10-03'), cpf: '000.000.000-00', genero: ('Masculino'), cep: '00000.00' },
       { id: 4, nomeCliente: 'Ana Pereira', dtNascimento: new Date('2023-10-04'), cpf: '000.000.000-00', genero: ('Feminino'), cep: '00000.00' },
     ];
-    this.dataSource = new MatTableDataSource(this.reservas);
+    this.dataSource = new MatTableDataSource(this.clientes);
   }
 
   modalCliente() {
@@ -48,7 +46,11 @@ export class ClienteComponent implements OnInit, AfterViewInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+     console.log(result);
+      if (result) {
+         this.clientes.push(result)
+        this.dataSource = new MatTableDataSource(this.clientes);
+      }
     });
   }
 
