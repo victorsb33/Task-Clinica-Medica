@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class MedicoComponent implements OnInit {
 
-  displayedColumns: string[] = ['nome', 'telefone', 'crm', 'area', 'plano'];
+  displayedColumns: string[] = ['nome', 'telefone', 'crm', 'area', 'cep'];
   dataSource!: MatTableDataSource<Medico>;
   medicos: Medico[] = [];
   form: FormGroup;
@@ -34,10 +34,10 @@ export class MedicoComponent implements OnInit {
   }
   ngOnInit(): void {
     this.medicos = [
-      { id: 1, nome: 'Angelica', telefone: '0500 2025 007', crm: '18541', area:'Pediatrico', plano: 'N' },
-      { id: 2, nome: 'Eliana', telefone: '0500 2025 020', crm: '18542', area:'clinico Geral', plano: 'S' },
-      { id: 3, nome: 'Xuxa', telefone: '0500 2025 040', crm: '18543', area:'Neurologista', plano: 'S' },
-      { id: 4, nome: 'Didi', telefone: '0500 2025 100', crm: '18544', area:'Urologista', plano: 'N' },
+      { id: 1, nome: 'Camila Richa Navega', telefone: '(48) 981162256 ', crm: '18541', area:'Pediatrico', cep: '13301-769' },
+      { id: 2, nome: 'Nelson Guedes Augusto', telefone: '(48) 996718674', crm: '18542', area:'clinico Geral', cep: '04313-080' },
+      { id: 3, nome: 'Emmanuel Reis Bocafoli', telefone: '(48) 999588168', crm: '18543', area:'Neurologista', cep: '18016-580' },
+      { id: 4, nome: 'Maria Eliza Araujo', telefone: '(48) 984767399', crm: '18544', area:'Urologista', cep: '07094-180' },
     ];
     this.dataSource = new MatTableDataSource(this.medicos);
   }

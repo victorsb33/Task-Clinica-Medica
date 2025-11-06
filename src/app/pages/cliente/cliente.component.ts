@@ -32,10 +32,10 @@ export class ClienteComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.clientes = [
-      { id: 1, nomeCliente: 'João Silva', dtNascimento: new Date('2023-10-01'), cpf: '000.000.000-00', genero: ('Masculino'), cep: '00000.00' },
-      { id: 2, nomeCliente: 'Maria Oliveira', dtNascimento: new Date('2023-10-02'), cpf: '000.000.000-00', genero: ('Feminino'), cep: '00000.00' },
-      { id: 3, nomeCliente: 'Carlos Souza', dtNascimento: new Date('2023-10-03'), cpf: '000.000.000-00', genero: ('Masculino'), cep: '00000.00' },
-      { id: 4, nomeCliente: 'Ana Pereira', dtNascimento: new Date('2023-10-04'), cpf: '000.000.000-00', genero: ('Feminino'), cep: '00000.00' },
+      { id: 1, nomeCliente: 'João Silva', dtNascimento: new Date('2023-10-01'), cpf: '247.228.667-83', genero: ('Masculino'), cep: '12903-423' },
+      { id: 2, nomeCliente: 'Maria Oliveira', dtNascimento: new Date('2023-10-02'), cpf: '717.254.961-94', genero: ('Feminino'), cep: '14781-233' },
+      { id: 3, nomeCliente: 'Carlos Souza', dtNascimento: new Date('2023-10-03'), cpf: '196.701.355-16', genero: ('Masculino'), cep: '11440-410' },
+      { id: 4, nomeCliente: 'Ana Pereira', dtNascimento: new Date('2023-10-04'), cpf: '857.008.588-51', genero: ('Feminino'), cep: '13871-209' },
     ];
     this.dataSource = new MatTableDataSource(this.clientes);
   }

@@ -3,6 +3,6 @@ export class Medico {
     nome!: string;
     telefone!: string;
     crm!: string;
-    plano!: string;
+    cep!: string;
     area!: string;
 }
