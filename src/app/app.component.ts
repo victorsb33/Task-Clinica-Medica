@@ -79,8 +79,14 @@ export class AppComponent {
     this.navigationService.items = [
       {
         type: 'link',
-        label: 'Dashboard',
-        route: '/',
+        label: 'Clientes',
+        route: '/cliente',
+        icon: icLayers
+      },
+      {
+        type: 'link',
+        label: 'Medicos',
+        route: '/medico',
         icon: icLayers
       }
     ];

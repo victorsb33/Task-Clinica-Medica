@@ -1,0 +1,74 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 15%;
+}
+
+.input-filtro {
+  width: 300%;
+  display: inline
+  
+  
+  
+}
+
+.botao-estilo {
+  background-color: #262B39;
+  color: white;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  align-items: center;
+  width: 100%;
+  padding: 0 8px;
+  flex-wrap: wrap;
+}
+
+.col-md-6 {
+  flex: 1 1 10px;
+  min-width: 240px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 16px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 18px;
+  margin-right: 40px;
+}
+
+.filtro-container {
+  width: 200%;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: start;
+}
+
+.actions-col {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 6px;
+}
